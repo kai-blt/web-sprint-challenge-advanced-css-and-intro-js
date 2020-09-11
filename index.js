@@ -269,10 +269,15 @@ console.table(get20s(artists));
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
-  }
-  
+function removeArtist(arr, index) {
+  arr.slice(index, 2);
+  return `Removed artist ${arr[index].name} at index ${index}. There are ${arr.length} artists remaining.`
+}
+console.log(removeArtist(artists, 0));
+console.log(removeArtist(artists, 0));
+console.table(artists);
+console.log(artists.slice(0, 1));
+console.table(artists);
  
 
 /**
@@ -288,11 +293,23 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
+let Brendan = {
+  id: 20,
+  name: 'Brendan',
+  years: '1985 - 2020',
+  genre: 'Web Design',
+  nationality: 'Chinese',
+  bio: 'I am currently a Lambda School Student. I\'m studing full stack web development.',
+  wikipedia: 'http://127.0.0.1',
+  paintings: 0
+}
 
-    /* Code here */
+function addArtist(obj, arr){
+  arr.push(obj);
+  return arr;
+}
+console.table(addArtist(Brendan, artists));
 
-  }
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
