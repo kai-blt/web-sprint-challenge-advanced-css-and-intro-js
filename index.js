@@ -214,12 +214,12 @@ console.log('Bio 3rd artist: \n' + artists[2].bio)
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-artists.forEach(item => {
-  if (item.name === 'Vincent Van Dough') {
-    item.name = 'Vincent Van Gough';
+artists.forEach(artist => {
+  if (artist.name === 'Vincent van Dough') {
+    artist.name = 'Vincent van Gogh';
   }
 });
-console.log(artists);
+console.table(artists);
 
 
 
@@ -231,11 +231,11 @@ console.log(artists);
  * 
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
-*/
-function getArtistByIndex(array, index) {
-    return `The artist at index ${index} is ${array[index].name}`
-}
-console.log(getArtistByIndex(artists, 0)); 
+// */
+// function getArtistByIndex(array, index) {
+//     return `The artist at index ${index} is ${array[index].name}`
+// }
+// console.log(getArtistByIndex(artists, 0)); 
   /**
 
 
@@ -350,7 +350,7 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
+function getHTML(data){
 
     /* Code here */
 
