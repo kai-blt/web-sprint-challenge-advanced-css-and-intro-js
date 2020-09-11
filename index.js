@@ -379,12 +379,16 @@ console.log('Randomized artists array: ')
 console.table(randomize(artists));
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
-// function filter1900s(arr) {
-//   arr.filter(artist => {
-//     let yearsSplit = artist.years.split(' - '); //Split the birth and death years for artists
-//     if (yearsSplit[0] >= 1900 && yearsSplit[1] <= 2000) {
-//         return artist;
-//     }
-//   });
-// }
-// console.log(filter1900s(artists));
+
+const filter19 = [];
+ function filter1900s(arr) {
+  arr.filter(artist => {
+    let yearsSplit = artist.years.split(' - '); //Split the birth and death years for artists
+    if (yearsSplit[0] >= 1900 && yearsSplit[1] <= 2000) {
+        filter19.push(artist);
+    }
+  });
+  return filter19;
+}
+console.log('Using filter method to filter 1900-2000:')
+console.table(filter1900s(artists));
