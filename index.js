@@ -231,12 +231,12 @@ console.table(artists);
  * 
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
-// */
-// function getArtistByIndex(array, index) {
-//     return `The artist at index ${index} is ${array[index].name}`
-// }
-// console.log(getArtistByIndex(artists, 0)); 
-  /**
+*/
+
+function getArtistByIndex(array, index) {
+    return `The artist at index ${index} is ${array[index].name}`
+}
+console.log(getArtistByIndex(artists, 0)); 
 
 
 
@@ -252,6 +252,7 @@ function get20s(arr){
       arr20s.push(artist);
     }
   });
+  console.log('Artists born in and died in the 20th Century:')
   return arr20s;
 }
 console.table(get20s(artists));
@@ -270,14 +271,12 @@ console.table(get20s(artists));
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
 function removeArtist(arr, index) {
-  arr.slice(index, 2);
+  arr.splice(index, 1);
   return `Removed artist ${arr[index].name} at index ${index}. There are ${arr.length} artists remaining.`
 }
 console.log(removeArtist(artists, 0));
 console.log(removeArtist(artists, 0));
-console.table(artists);
-console.log(artists.slice(0, 1));
-console.table(artists);
+
  
 
 /**
@@ -350,20 +349,42 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
+let html = [];
 function getHTML(data){
-
-    /* Code here */
-
+  for (let property in data) {
+    console.log('<div id="artist">');
+    console.log('<div class="image">');
+    console.log(' <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>');
+    console.log('</div>');
+    console.log('<div class="name">');
+    console.log(`<a href="${property}">${data}</a>`);
   }
-
+  return html;  
+}
+console.log(getHTML(artists));
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
-
-    /* Code here */
-
+let randomizedArray = [];
+function randomize(arr){  
+  let arrCopy = [...arr]; //copy array  
+  for (let i = arrCopy.length; i > 0; i--){
+    let random = Math.floor(Math.random() * (arrCopy.length + 1)); //generate random #
+    arrCopy.splice(random, 1);
+    randomizedArray.push(arr[random]);
   }
-
+  return randomizedArray;
+}
+console.log('Randomized artists array: ')
+console.table(randomize(artists));
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
+// function filter1900s(arr) {
+//   arr.filter(artist => {
+//     let yearsSplit = artist.years.split(' - '); //Split the birth and death years for artists
+//     if (yearsSplit[0] >= 1900 && yearsSplit[1] <= 2000) {
+//         return artist;
+//     }
+//   });
+// }
+// console.log(filter1900s(artists));
