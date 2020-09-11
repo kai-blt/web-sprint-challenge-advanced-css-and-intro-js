@@ -23,9 +23,26 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. How would you describe acessibility on the web to someone new to programming?
+***Web accessibility is the practice of taking care to program your website to ensure that there are no barriers that prevent anyone from using it. Specifically those who use screen readers, have visial or motor impairment or slow internet access. Using proper color contrast, semantic html tags and responsive design all help provide the user the best experience for your site.***
+
+
 2. Talk about 3 different things you can do to ensure your website is accessible. 
+
+***You can ensure that your site is accessible by:
+- providing good color contrast and trying to stay away from color combinations: Green & Red, Green & Brown, Blue & Purple, Green & Blue, Light Green & Yellow, Blue & Grey, Green & Grey, Green & Black.
+- Using fluid units (%, rem, em) instead of hard coded units (px) as hard coded units won't adjust should the user try to zoom in, or is on a different sized screen/device. 
+-Utilizing semantic tags will help users who use screen readers to parse a site. Without these tags, it's very hard for these users to have a good site experience.***
+
+
+
+
 3. How would you explain the concept of a variable to someone new to programming?
+***Variables are containers that allow programmers to store data and reference them for later use***
+
+
 4. What is the purpose of using functions in code?
+***Functions allow us to protect blocks of code and control the program flow so that code only executes when the programmer wants it to. They also allow us to act on data in a meaningful way and extend a programs functionality.***
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
