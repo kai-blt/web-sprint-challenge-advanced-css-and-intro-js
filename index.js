@@ -207,10 +207,20 @@ const artists = [
 
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
+console.log('First artists name: ' + artists[0].name);
+console.log('Bio 3rd artist: \n' + artists[2].bio)
+
 
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+artists.forEach(item => {
+  if (item.name === 'Vincent Van Dough') {
+    item.name = 'Vincent Van Gough';
+  }
+});
+console.log(artists);
+
 
 
 
@@ -223,19 +233,30 @@ const artists = [
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(array, index) {
-    /* code here */
-  }
-  
+    return `The artist at index ${index} is ${array[index].name}`
+}
+console.log(getArtistByIndex(artists, 0)); 
   /**
 
 
-/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/* Code here */){
 
-  /* Code here */
+/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and
+ died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
+let arr20s = [];
+function get20s(arr){  
+  arr.forEach(artist => {
+    let yearsSplit = artist.years.split(' - '); //Split the birth and death years for artists
+    if (yearsSplit[0] >= 1900 && yearsSplit[1] <= 2000) { //Determine if their birth or death years lie within 1900 and 2000.
+      arr20s.push(artist);
+    }
+  });
+  return arr20s;
 }
+console.table(get20s(artists));
+
+
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
